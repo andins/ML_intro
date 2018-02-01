@@ -51,6 +51,17 @@ def gradient_descent(x, t):
                   shape='full')
     plt.scatter(w[0, :], w[1, :])
     
+class supermodel:
+    def __init__(self):
+        self.w = np.random.randn(10)
+
+    def fit(self, X, t):
+        self.w = np.polyfit(X, t, 10)
+    
+    def predict(self, X):
+        y = np.polyval(self.w, X)
+        return y
+    
         
     
 x = np.random.rand(1000)
